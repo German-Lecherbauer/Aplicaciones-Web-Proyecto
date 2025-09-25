@@ -34,7 +34,7 @@ export function cartList() {
         </div>
     </div>
         `;
-        
+
     });
 
     offcanvasbody.innerHTML = template;
