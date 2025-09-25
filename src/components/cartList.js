@@ -34,11 +34,15 @@ export function cartList() {
         </div>
     </div>
         `;
-        offcanvasbody.innerHTML = template;
+        
     });
 
+    offcanvasbody.innerHTML = template;
     eventsOnClick(dataStorage);
-    
+    buttonCartActions();
+    updateCartTotal();
+
+
 }
 
 function eventsOnClick(productsStorage) {
@@ -87,4 +91,31 @@ function updateItem(item) {
     document.querySelector(`#subtotal-${item.id}`).textContent = (item.price * item.qtty).toFixed(2);
 }
 
+function updateCartTotal() {
+    let cart = getFromLocalStorage();
+    let total = cart.reduce((acc, item) => acc + item.price * item.qtty, 0);
+    let totalElement = document.querySelector('#cart-total');
+    if (totalElement) totalElement.textContent = total.toFixed(2);
+}
 
+function buttonCartActions() {
+    // Botón finalizar compra
+    let btnFinish = document.querySelector('#btn-finish-cart');
+    if (btnFinish) {
+        btnFinish.addEventListener('click', () => {
+            setItemToLocalStorage([]);
+            cartList();
+            toast("¡Gracias por tu compra!", "success");
+        });
+    }
+
+    // Botón vaciar carrito
+    let btnEmpty = document.querySelector('#btn-empty-cart');
+    if (btnEmpty) {
+        btnEmpty.addEventListener('click', () => {
+            setItemToLocalStorage([]);
+            toast("Carrito vacío", "warning");
+            cartList();
+        });
+    }
+}
