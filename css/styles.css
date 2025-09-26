@@ -1,0 +1,143 @@
+/*  Variables  */
+:root {
+  --graphite-900: #111827;
+  --graphite-950: #0b1220;
+}
+
+/*  Brand grafito */
+.brand-graphite {
+  color: var(--graphite-900);
+  font-weight: 800;
+  letter-spacing: .3px;
+  text-decoration: none;
+}
+.brand-graphite:hover { color: var(--graphite-950); }
+.brand-graphite:focus-visible {
+  outline: 2px solid var(--graphite-900);
+  outline-offset: 2px;
+}
+
+/*  Buscador  */
+.search-wrap { max-width: clamp(320px, 40vw, 480px); }
+.search-compact {
+  padding: .35rem .9rem;
+  line-height: 1.2;
+}
+.search-compact:focus-visible {
+  box-shadow: 0 0 0 .2rem rgba(17,24,39,.12);
+  border-color: rgba(17,24,39,.35);
+}
+
+/*  Footer  */
+.footer{
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(255,255,255,.06), transparent 60%),
+    linear-gradient(180deg, #0f172a, #111827); /* grafito frío */
+  color: #e5e7eb;
+}
+.footer h5, .footer h6 { color: #e5e7eb; }
+
+.footer-accent{
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #22d3ee, #34d399);
+  opacity: .9;
+}
+
+.footer-sep{
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+}
+
+/* Links (usados en Soporte) */
+.footer-link{
+  color: #cbd5e1;
+  text-decoration: none;
+  display: inline-block;
+  padding: 2px 0;
+  transition: color .15s ease, transform .15s ease;
+}
+.footer-link:hover{ color: #ffffff; transform: translateX(2px); }
+
+/* Redes */
+.footer-social{
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: #e5e7eb; text-decoration: none;
+  transition: transform .15s ease, background .15s ease;
+}
+.footer-social:hover{ transform: translateY(-2px); background: rgba(255,255,255,.12); }
+
+/* Inputs newsletter */
+.footer-input{
+  background: #0b1220;
+  border-color: #334155;
+  color: #e5e7eb;
+}
+.footer-input::placeholder{ color: #94a3b8; }
+.footer-input:focus{
+  border-color: #475569;
+  box-shadow: 0 0 0 .2rem rgba(99,102,241,.15); 
+
+/* Botón newsletter  */
+.footer-btn{
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  margin-top: .5rem;                 
+}
+@media (min-width: 576px){
+  .footer-btn{ margin-top: 0; }     
+}
+
+.footer .btn-primary{
+  background: #6366f1; /* indigo */
+  border-color: #6366f1;
+}
+.footer .btn-primary:hover{ background: #4f46e5; border-color: #4f46e5; }
+
+.footer .text-muted,
+.footer .footer-muted,
+.footer .footer-note {
+  color: #cbd5e1 !important;
+}
+.footer .footer-note { font-size: .9rem; opacity: .95; }
+
+
+/* Redes más chicas en XS */
+@media (max-width: 576px){
+  .footer .footer-social{ width: 32px; height: 32px; }
+}
+
+/* Centro del menú (navbar desktop)  */
+@media (min-width: 992px) {
+  #center-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+}
+
+
+@media (min-width: 992px) {
+  #center-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1;    
+  }
+  .nav-cart {
+    position: relative;
+    z-index: 2;             
+  }
+}
+
+.footer .footer-btn { margin-top: 1rem !important; }
+@media (min-width: 576px) {
+  .footer .footer-btn { margin-top: 0 !important; }
+}
+.footer .d-inline-flex.flex-wrap { row-gap: 1rem !important; }
+
+}
