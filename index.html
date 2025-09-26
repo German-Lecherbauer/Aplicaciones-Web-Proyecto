@@ -44,20 +44,69 @@
             <li class="nav-item">
               <a class="nav-link" href="#" id="womens-clothing">women's clothing</a>
             </li>
-            <li>
-              <button class="btn btn-outline-dark border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </li>
           </ul>
+
+          <div class="d-flex ms-auto">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="inputSearch">
+            </form>
+
+            <button class="btn btn-outline-dark border-0 ms-2" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+              <i class="bi bi-cart-plus"></i>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
   </header>
 
   <main class="container min-vh-100">
-    <input type="text" class="form-control mt-5" name="Search" id="inputSearch" placeholder="Buscar">
+    <!--Carrusel -->
+    <div id="carouselExample" class="carousel slide mt-4">
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1677995700941-100976883af7?q=80&w=923&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="d-block w-100" alt="Oferta 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Bienvenido a Fake Store</h5>
+            <p>¡Encontrá las mejores ofertas en un solo lugar!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="d-block w-100" alt="Oferta 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Novedades en Electrónica</h5>
+            <p>Los mejores precios en tecnología.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1727894722407-6237ebd8b28b?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="d-block w-100" alt="Oferta 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Moda 2025</h5>
+            <p>Ropa para todos los estilos.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+
     <div class="row row-cols-1 row-cols-md-4 g-4 mt-5" id="product-list">
 
       <!-- Generado desde JS -->
