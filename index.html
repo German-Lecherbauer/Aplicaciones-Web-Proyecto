@@ -85,16 +85,18 @@
     <div class="offcanvas-body">
       <!-- Generar desde JS -->
     </div>
+
     <div class="offcanvas-footer d-flex justify-content-center align-items-center gap-3 py-3">
-      <button class="btn btn-primary">Finalizar Compra</button>
-      <button class="btn btn-outline-secondary">Vaciar Carrito</button>
+    <button class="btn btn-primary" id="btn-finish-cart">Finalizar Compra</button>
+    <button class="btn btn-outline-secondary" id="btn-empty-cart">Vaciar Carrito</button>
     </div>
+
   </div>
 
   <!-- Toast template -->
-  <div aria-live="polite" aria-atomic="true" class="position-fixed" style="z-index: 1055; top:20px; right: 20px; width: 350px;">
-    <div class="toast-container"></div>
-  </div>
+  <div aria-live="polite" aria-atomic="true" class="toast-zone">
+  <div class="toast-container"><!-- Generado desde JS --></div>
+</div>
 </main>
 
 <!-- Footer -->
