@@ -89,6 +89,7 @@ function updateItem(item) {
 
     document.querySelector(`#qtty-${item.id}`).textContent = item.qtty;
     document.querySelector(`#subtotal-${item.id}`).textContent = (item.price * item.qtty).toFixed(2);
+    updateCartTotal();
 }
 
 function updateCartTotal() {
