@@ -1,6 +1,9 @@
 import { deleteItemStorage, getFromLocalStorage, setItemToLocalStorage } from "../../storage/storage.js";
 import { toast } from './toast.js';
 
+const btnFinishCart = document.querySelector('#btn-finish-cart');
+const btnEmptyCart = document.querySelector('#btn-empty-cart');
+
 
 export function cartList(){
   const offcanvasbody = document.querySelector('.offcanvas-body');
@@ -9,6 +12,8 @@ export function cartList(){
 
   if (dataStorage.length === 0) {
     offcanvasbody.innerHTML = `<div class="text-center text-muted py-4">Tu carrito está vacío</div>`;
+    btnEmptyCart?.setAttribute('disabled', 'true');
+    btnFinishCart?.setAttribute('disabled', 'true');
     updateCartTotal();
     return;
   }
@@ -46,6 +51,8 @@ export function cartList(){
   });
 
   offcanvasbody.innerHTML = template;
+  btnEmptyCart?.removeAttribute('disabled');
+  btnFinishCart?.removeAttribute('disabled');
   eventsOnClick(dataStorage);
   buttonCartActions();
   updateCartTotal();
@@ -100,14 +107,15 @@ function updateCartTotal() {
   if (totalElement) totalElement.textContent = total.toFixed(2);
 }
 
+
 function buttonCartActions() {
-  document.querySelector('#btn-finish-cart')?.addEventListener('click', () => {
+  btnFinishCart?.addEventListener('click', () => {
     setItemToLocalStorage([]);
     cartList();
     toast("¡Gracias por tu compra!", "success");
   });
 
-document.querySelector('#btn-empty-cart')?.addEventListener('click', () => {
+btnEmptyCart?.addEventListener('click', () => {
   clearCart();          // o setItemToLocalStorage([])
   cartList();
   toast("Carrito vacío", "warning");
