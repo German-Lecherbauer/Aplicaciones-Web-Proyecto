@@ -4,32 +4,29 @@ export function RenderCards(products = []) {
   const productList = document.querySelector('#product-list');
   if (!productList) return;
 
-  productList.innerHTML = ''; // <-- ÚNICA línea agregada: limpiar antes de pintar
+  productList.innerHTML = ''; // Clear the list before rendering
 
   let template = '';
   products.forEach((p) => {
     template += `
-      <div class="col">
-        <div class="card justify-content-center align-items-center" style="width: 300px;">
-          <img src="${p.image}" class="card-img-top" alt="${p.title}"
-               style="height: 300px; width: 250px; object-fit: contain;">
-          <div class="card-body" style="width: 300px;">
+      <div class="col d-flex justify-content-center">
+        <div class="card h-100 w-100">
+          <img src="${p.image}" class="card-img-top card-img-custom" alt="${p.title}">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title text-truncate">${p.title}</h5>
-          </div>
-          <div class="mb-3 d-flex justify-content-center align-items-center">
-            <button class="btn btn-dark" id="btn-${p.id}">Más Detalles</button>
+            <div class="mt-auto">
+              <button class="btn btn-dark btn-sm w-100" id="btn-${p.id}">Más Detalles</button>
+            </div>
           </div>
         </div>
       </div>
     `;
   });
 
-  // Reemplaza SIEMPRE el contenido
   productList.innerHTML = template;
 
-  // Eventos solo sobre lo renderizado
   products.forEach((p) => {
-    const btn = document.querySelector(`#btn-${p.id}`); 
+    const btn = document.querySelector(`#btn-${p.id}`);
     if (btn) btn.addEventListener('click', () => Modal(p));
   });
 }

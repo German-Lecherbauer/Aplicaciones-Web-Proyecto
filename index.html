@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fake Store</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>FS</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
@@ -13,10 +14,10 @@
 </head>
 
 <body>
-<header>
+<header id="main-header">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container position-relative">
-      <a class="navbar-brand brand-graphite" href="#">FAKE STORE</a>
+      <a class="navbar-brand brand-graphite d-none d-lg-block" href="#">FAKE STORE</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +26,7 @@
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav gap-2" id="center-nav">
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="#" id="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="#" id="home">All</a></li>
           <li class="nav-item"><a class="nav-link" href="#" id="electronics">electronics</a></li>
           <li class="nav-item"><a class="nav-link" href="#" id="jewelery">jewelery</a></li>
           <li class="nav-item"><a class="nav-link" href="#" id="mens-clothing">men's clothing</a></li>
@@ -67,7 +68,7 @@
     </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-4 g-4 mt-5" id="product-list">
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-5 justify-content-center" id="product-list">
 
     <!-- Generado desde JS -->
   </div>
@@ -97,6 +98,12 @@
   <div aria-live="polite" aria-atomic="true" class="toast-zone">
   <div class="toast-container"><!-- Generado desde JS --></div>
 </div>
+
+<!-- Botón Go to Top -->
+<button class="btn btn-primary rounded-circle" id="btn-top" title="Go to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
 </main>
 
 <!-- Footer -->
@@ -108,7 +115,7 @@
     <div class="col-12 col-md-4">
       <h5 class="mb-2">FAKE STORE</h5>
       <div class="d-flex justify-content-center gap-2 mt-3">
-        <a class="footer-social" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a class="footer-social" href="#" aria-label="Instagram"><i class.bi bi-instagram"></i></a>
         <a class="footer-social" href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
         <a class="footer-social" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         <a class="footer-social" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>

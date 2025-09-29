@@ -9,7 +9,7 @@ export function Modal(prod) {
     let container = document.querySelector('#productModal');
 
     let template = `
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">${prod.title}</h1>
@@ -17,11 +17,11 @@ export function Modal(prod) {
       </div>
       <div class="modal-body">
       <div class="row">
-      <div class="col-md-6">
-        <img src="${prod.image}" class="img-fluid" alt="${prod.title}">
+      <div class="col-md-5 d-flex justify-content-center align-items-center">
+        <img src="${prod.image}" class="img-fluid" alt="${prod.title}" style="max-height: 200px; max-width: 100%; margin: auto; display: block;">
       </div>
-      <div class="col-md-6 d-flex justify-content-center align-items-center">
-      <div class="d-flex flex-column gap-3">
+      <div class="col-md-7 d-flex justify-content-center align-items-center">
+      <div class="d-flex flex-column gap-3 text-center text-md-start align-items-center align-items-md-start">
          <p>${prod.description}</p>
          <p style="width:150px;"> Precio:<small> USD $${prod.price}</small>
           </p>

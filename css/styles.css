@@ -96,10 +96,6 @@
 .footer .footer-note { color: #cbd5e1 !important; }
 .footer .footer-note { font-size: .9rem; opacity: .95; }
 
-@media (max-width: 576px){
-  .footer .footer-social{ width: 32px; height: 32px; }
-}
-
 /* Toasts */
 .toast-zone{
   position: fixed;
@@ -113,9 +109,6 @@
   pointer-events: auto;
   margin-bottom: .5rem;
 }
-@media (max-width: 576px){
-  .toast-zone{ right: 12px; top: 96px; }
-}
 
 /* Navbar */
 @media (min-width: 992px) {
@@ -127,4 +120,24 @@
     z-index: 1;
   }
   .nav-cart { position: relative; z-index: 2; }
+}
+
+#main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+#btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1080;
+}
+
+.card-img-custom {
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
 }

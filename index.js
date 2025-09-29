@@ -6,46 +6,64 @@ import { getProducts } from "./services/api.js";
 initLocalStorage();
 
 getProducts().then((products) => {
+  let allProducts = products;
   let inputSearch = document.querySelector('#inputSearch');
-  let home = document.querySelector('#home');
-  home.addEventListener('click', () => {
-    return RenderCards(products);
-  });
-  let electronics = document.querySelector('#electronics');
-  electronics.addEventListener('click', () => {
-    let result = products.filter((p => p.category === 'electronics'));
-    return RenderCards(result);
-  });
-  let jewelery = document.querySelector('#jewelery');
-  jewelery.addEventListener('click', () => {
-    let result = products.filter((p => p.category === 'jewelery'));
-    return RenderCards(result);
+  
+  document.querySelector('#home').addEventListener('click', () => {
+    RenderCards(allProducts);
   });
 
-  let mensclothing = document.querySelector('#mens-clothing');
-  mensclothing?.addEventListener('click', (e) => {
-  e.preventDefault();
-  let result = products.filter(p => p.category === "men's clothing");
-  RenderCards(result);
-});
+  document.querySelector('#electronics').addEventListener('click', () => {
+    let result = allProducts.filter((p => p.category === 'electronics'));
+    RenderCards(result);
+  });
 
-  let womensclothing = document.querySelector('#womens-clothing'); 
-  womensclothing?.addEventListener('click', (e) => {
-  e.preventDefault();
-  let result = products.filter(p => p.category === "women's clothing");
-  RenderCards(result);
-});
+  document.querySelector('#jewelery').addEventListener('click', () => {
+    let result = allProducts.filter((p => p.category === 'jewelery'));
+    RenderCards(result);
+  });
 
+  document.querySelector('#mens-clothing')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    let result = allProducts.filter(p => p.category === "men's clothing");
+    RenderCards(result);
+  });
+
+  document.querySelector('#womens-clothing')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    let result = allProducts.filter(p => p.category === "women's clothing");
+    RenderCards(result);
+  });
 
   inputSearch.addEventListener('input', (event) => {
-    console.log(event.target.value);
-    let query = event.target.value;
+    let query = event.target.value.toLowerCase();
     if (query !== ''){
-      let result = products.filter((p => p.title.toLowerCase().includes(query.toLowerCase())));
-      return RenderCards(result);
+      let result = allProducts.filter((p => p.title.toLowerCase().includes(query)));
+      RenderCards(result);
+    } else {
+      RenderCards(allProducts);
     }
   });
-  RenderCards(products);
+
+  RenderCards(allProducts);
 });
 
 cartList();
+
+// Go to top button
+const btnTop = document.querySelector('#btn-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    btnTop.style.display = 'block';
+  } else {
+    btnTop.style.display = 'none';
+  }
+});
+
+btnTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
