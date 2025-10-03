@@ -95,7 +95,7 @@ function updateItem(item) {
     setItemToLocalStorage(cart);
   }
 
-  document.querySelector(`#qtty-${item.id}`).textContent = item.qtty;
+  document.querySelector(`#qtty-${item.id}`).textContent = item.qenty;
   document.querySelector(`#subtotal-${item.id}`).textContent = (item.price * item.qtty).toFixed(2);
   updateCartTotal();
 }
@@ -107,6 +107,10 @@ function updateCartTotal() {
   if (totalElement) totalElement.textContent = total.toFixed(2);
 }
 
+function clearCart() {
+  setItemToLocalStorage([]);
+  updateCartTotal();
+}
 
 function buttonCartActions() {
   btnFinishCart?.addEventListener('click', () => {
@@ -116,7 +120,7 @@ function buttonCartActions() {
   });
 
 btnEmptyCart?.addEventListener('click', () => {
-  clearCart();          // o setItemToLocalStorage([])
+  clearCart();
   cartList();
   toast("Carrito vacío", "warning");
 });

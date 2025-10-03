@@ -50,7 +50,6 @@ getProducts().then((products) => {
 
 cartList();
 
-// Go to top button
 const btnTop = document.querySelector('#btn-top');
 
 window.addEventListener('scroll', () => {
@@ -66,4 +65,16 @@ btnTop.addEventListener('click', () => {
     top: 0,
     behavior: 'smooth'
   });
+});
+
+const offcanvas = document.querySelector('#offcanvasRight');
+
+offcanvas.addEventListener('show.bs.offcanvas', () => {
+  btnTop.style.display = 'none';
+});
+
+offcanvas.addEventListener('hide.bs.offcanvas', () => {
+  if (window.scrollY > 200) {
+    btnTop.style.display = 'block';
+  }
 });

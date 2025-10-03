@@ -10,12 +10,15 @@ export function RenderCards(products = []) {
   products.forEach((p) => {
     template += `
       <div class="col d-flex justify-content-center">
-        <div class="card h-100 w-100">
+        <div class="card h-100 w-100 shadow-sm">
           <img src="${p.image}" class="card-img-top card-img-custom" alt="${p.title}">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-truncate">${p.title}</h5>
-            <div class="mt-auto">
-              <button class="btn btn-dark btn-sm w-100" id="btn-${p.id}">Más Detalles</button>
+            <h5 class="card-title text-truncate fw-bold text-center">${p.title}</h5>
+            <div class="mt-auto d-flex justify-content-center">
+              <div class="input-group w-auto">
+                <span class="input-group-text">$${p.price}</span>
+                <button class="btn btn-dark" id="btn-${p.id}">Más Detalles</button>
+              </div>
             </div>
           </div>
         </div>
